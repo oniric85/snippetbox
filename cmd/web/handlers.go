@@ -17,6 +17,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 	files := []string{
 		"./ui/html/home.page.tmpl",
 		"./ui/html/base.layout.tmpl",
+		"./ui/html/footer.partial.tmpl",
 	}
 	// Note that we are using the "..." syntax to expand the files parameter
 	ts, err := template.ParseFiles(files...)

@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:5.7
+    command:
+      - --collation-server=utf8_unicode_ci
+      - --character-set-server=utf8
+      - --sync-binlog=0
+      - --innodb-flush-log-at-trx-commit=0
+      - --innodb-io-capacity=2500
+      - --innodb-io-capacity-max=4500
+      - --innodb-flush-method=O_DIRECT
+      - --innodb-flush-sync=0
+      - --skip-innodb-doublewrite
+      - --sql-mode=
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+volumes:
+  data:

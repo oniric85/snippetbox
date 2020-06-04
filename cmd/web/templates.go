@@ -2,19 +2,18 @@ package main
 
 import (
 	"html/template"
-	"net/url"
 	"path/filepath"
 	"time"
 
 	"github.com/oniric85/snippetbox/pkg/models"
+	"github.com/oniric85/snippetbox/pkg/models/forms"
 )
 
 type templateData struct {
 	CurrentYear int
+	Form        *forms.Form
 	Snippet     *models.Snippet
 	Snippets    []*models.Snippet
-	FormData    url.Values
-	FormErrors  map[string]string
 }
 
 func humanDate(t time.Time) string {
